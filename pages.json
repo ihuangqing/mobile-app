@@ -1,0 +1,2034 @@
+{
+	"easycom": { //引用uview-ui 组件
+		"autoscan": true,
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"globalStyle": {
+		"navigationStyle": "default", // 导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏
+		"navigationBarBackgroundColor": "#F7F7F7", //导航栏背景颜色
+		"navigationBarTextStyle": "black", // 导航栏标题颜色及状态栏前景颜色，仅支持 black/white
+		"enablePullDownRefresh": false,
+		"rpxCalcMaxDeviceWidth": 816,
+		"rpxCalcBaseDeviceWidth": 375,
+		"rpxCalcIncludeWidth": 750,
+		"dynamicRpx": true,
+		"app-plus": { // app端生效的全局样式
+			"background": "#FFFFFF",
+			"bounce": "none", //页面回弹效果，设置为 "none" 时关闭效果
+			"titleNView": { //全局默认导航栏样式
+				"backgroundColor": "#FFFFFF",
+				"titleColor": "#323233",
+				"titleSize": "32rpx",
+				// "splitLine": {
+				// 	"color": "#c8c7cc" //此颜色是uni官方主题样式中border颜色 $uni-border-color
+				// },
+				"backButton": {
+					"color": "#2979FF",
+					"fontSize": "28px"
+				}
+			}
+			// "subNVues": [
+			// 	// #ifdef APP-PLUS
+			// 	{ //全局原生子窗体 -- 下拉选择框
+			// 		"id": "select",
+			// 		"path": "/platform/app-plus/subNVue/select",
+			// 		"type": "popup",
+			// 		"style": {
+			// 			"position": "absolute",
+			// 			"bottom": "0",
+			// 			"left": "0",
+			// 			"background": "transparent",
+			// 			"width": "100%",
+			// 			"height": "45%"
+			// 		}
+			// 	}
+			// 	// #endif
+			// ]
+		}
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/index", //首页
+			"style": {
+				"navigationBarTitleText": "智慧现场移动应用",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/msg/index", // 消息推送
+			"style": {
+				"navigationBarTitleText": "通知中心",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue631",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "24"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue631",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "24"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/msg/richText/index", // 公告详情
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		}, {
+			"path": "pages/microApp/index", //分类
+			"style": {
+				"navigationBarTitleText": "分类",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/visualzed/index", //可视化
+			"style": {
+				"navigationBarTitleText": "可视化",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/visualzed/Dips/index", //可视化 → dips
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/mine/index", // 我的
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/mine/setting/index", // 我的 -- 设置
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+		}, {
+			"path": "pages/mine/userInfo/index", // 我的 -- 个人中心
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		}, {
+			"path": "pages/mine/setting/editPwd/index", // 我的 -- 设置 -- 修改密码
+			"style": {
+				"navigationBarTitleText": "修改密码"
+			}
+		}, {
+			"path": "pages/mine/setting/appVersion/index", // 我的 -- 设置 -- 版本信息
+			"style": {
+				"navigationBarTitleText": "版本信息"
+			}
+		}, {
+			"path": "pages/mine/mySkills/index", // 我的 -- 我的技能
+			"style": {
+				"navigationBarTitleText": "我的技能"
+			}
+		}, {
+			"path": "pages/mine/myApplyList/index", // 我的 -- 我的申请
+			"style": {
+				"navigationBarTitleText": "我的申请"
+			}
+		}, {
+			"path": "pages/mine/myLearnRecords/index", // 我的 -- 我的学习记录
+			"style": {
+				"navigationBarTitleText": "我的学习记录",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/mine/myLearnRecords/recordDetail/index", // 我的 -- 我的学习记录
+			"style": {
+				"navigationBarTitleText": "课程学习报告",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/mine/skillEnhaRecords/index", // 我的 -- 技能提升记录
+			"style": {
+				"navigationBarTitleText": "技能提升记录"
+			}
+		}, {
+			"path": "pages/mine/workHours/index", // 我的 -- 工作时长查询
+			"style": {
+				"navigationBarTitleText": "工作时长",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/mine/jobMatchRecords/index", // 我的 -- 岗位匹配记录
+			"style": {
+				"navigationBarTitleText": "岗位匹配记录",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/mine/tools/index", // 我的 -- 工具
+			"style": {
+				"navigationBarTitleText": "工具"
+			}
+		}, {
+			"path": "pages/mine/tools/batchWriteDataByNFC/index", // 我的 -- 工具 -- NFC数据读写(批量)  消防类
+			"style": {
+				"navigationBarTitleText": "NFC标签数据读写（消防）",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/mine/tools/batchWriteDataByNFCForDips/index", // 我的 -- 工具 -- NFC数据读写(批量) dips
+			"style": {
+				"navigationBarTitleText": "NFC标签数据读写（dips）",
+				"enablePullDownRefresh": true,
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/mine/tools/NFCRead/index", // 我的 -- 工具 -- NFC标签识别
+			"style": {
+				"navigationBarTitleText": "NFC标签识别"
+			}
+		}, {
+			"path": "pages/mine/tools/writeDataByNFC/index", // 我的 -- 工具 -- NFC数据读写
+			"style": {
+				"navigationBarTitleText": "NFC数据读写"
+			}
+		}, {
+			"path": "pages/404/index", // 404页面不存在
+			"style": {
+				"navigationBarTitleText": "404 页面不存在"
+			}
+		}, {
+			"path": "pages/login/index", // 登录
+			"style": {
+				"navigationBarTitleText": "登录",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/login/cardLogin/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false,
+					"softinputMode": "adjustPan" // "adjustPan" "adjustResize"
+				}
+			}
+		}, {
+			"path": "pages/microApp/E-SOP/sop/index", // E-SOP --待学习列表
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/microApp/E-SOP/sop/esopDetail/index", // E-SOP -- 待学习列表 -- 学习详情页面
+			"style": {
+				"navigationBarTitleText": "文件学习",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/E-SOP/skillMatrix/index", // E-SOP -- 技能矩阵
+			"style": {
+				"navigationBarTitleText": "技能矩阵"
+			}
+		}, {
+			"path": "pages/microApp/E-Checklist/spotUncheck/index", // E-Checklist -- 待点检
+			"style": {
+				"navigationBarTitleText": "待点检列表"
+			}
+		}, {
+			"path": "pages/microApp/E-Checklist/spotCheck/index", // E-Checklist -- 点检模块
+			"style": {
+				"navigationBarTitleText": "点检执行"
+			}
+		}, {
+			"path": "pages/microApp/E-Checklist/spotCheckConfirm/index", // E-Checklist -- 点检确认模块
+			"style": {
+				"navigationBarTitleText": "点检确认"
+			}
+		}, {
+			"path": "pages/microApp/E-Checklist/spotCheckConfirm/confirmDetail/index", // E-Checklist -- 点检确认页面
+			"style": {
+				"navigationBarTitleText": "点检项"
+			}
+		}, {
+			"path": "pages/microApp/E-Checklist/spotCheckHistory/index", // E-Checklist -- 点检历史历史
+			"style": {
+				"navigationBarTitleText": "点检历史"
+			}
+		}, {
+			"path": "pages/microApp/E-Checklist/spotCheckHistory/filter/index", // E-Checklist -- 点检历史 -- 点检更多历史搜索
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		}, {
+			"path": "pages/microApp/E-Checklist/spotCheckHistory/historyDetail/index", // E-Checklist -- 点检历史 -- 历史点检详情
+			"style": {
+				"navigationBarTitleText": "历史点检项"
+			}
+		},
+
+		{
+			"path": "pages/microApp/E-Checklist/spotCheckImprove/index", // E-Checklist -- 点检历史 -- 历史点检详情
+			"style": {
+				"navigationBarTitleText": "点检NG改善"
+			}
+		},
+		{
+			"path": "pages/microApp/E-Checklist/spotCheckImprove/spotCheckMeasure/index", // E-Checklist -- 点检历史 -- 历史点检详情
+			"style": {
+				"navigationBarTitleText": "点检NG改善措施"
+			}
+		},
+
+
+		{
+			"path": "pages/microApp/E-Checklist/improveConfirm/index", // E-Checklist -- 点检历史 -- 历史点检详情
+			"style": {
+				"navigationBarTitleText": "点检改善确认"
+			}
+		},
+		{
+			"path": "pages/microApp/E-Checklist/improveConfirm/spotCheckParticulars/index", // E-Checklist -- 点检历史 -- 历史点检详情
+			"style": {
+				"navigationBarTitleText": "点检改善详情"
+			}
+		},
+
+		{
+			"path": "pages/microApp/E-Checklist/improveConfirm/spotCheckAffirm/index", // E-Checklist -- 点检历史 -- 历史点检详情
+			"style": {
+				"navigationBarTitleText": "点检改善确认"
+			}
+		},
+		{
+			"path": "pages/microApp/Fit-PersonJob/signIn/index", // 人岗匹配 -- 上班签到 -- 人员签到列表
+			"style": {
+				"navigationBarTitleText": "上班签到",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue652",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "44rpx"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28px"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/signIn/undoDel/index", //人岗匹配 -- 上班签到 -- 撤销
+			"style": {
+				"navigationBarTitleText": "撤销"
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/signIn/dutyInfo/index", //人岗匹配 -- 上班签到 -- 签到岗位信息
+			"style": {
+				"navigationBarTitleText": "签到信息"
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/signOut/index", //人岗匹配 -- 下班签退
+			"style": {
+				"navigationBarTitleText": "下班签退",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "32px"
+						},
+						"buttons": [{
+							"text": "\ue62f",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "52rpx",
+							"width": "66"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue62f",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/signOutForUser/index", //人岗匹配 → 个人签退
+			"style": {
+				"navigationBarTitleText": "个人签退",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/leaveApply/index", // 人岗匹配 -- 离岗申请
+			"style": {
+				"navigationBarTitleText": "离岗申请"
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/leaveApplyForUser/index", //人岗匹配 → 人员离岗
+			"style": {
+				"navigationBarTitleText": "人员离岗",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/backPost/index", // 人岗匹配 -- 返岗确认
+			"style": {
+				"navigationBarTitleText": "返岗签到"
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/backPostForUser/index", // 人岗匹配 -- 个人返岗
+			"style": {
+				"navigationBarTitleText": "返岗签到"
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/tempLoan/index", // 人岗匹配 -- 临时借调
+			"style": {
+				"navigationBarTitleText": "临时借调"
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/signInForUser/index",
+			"style": {
+				"navigationBarTitleText": "个人签到",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				},
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/tempLoan/addLoanPost/index", //人岗签到 → 临时借调 → 调出岗位
+			"style": {
+				"navigationBarTitleText": "调出岗位"
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/fitPersonSkill/index", // 人岗匹配 -- 人岗匹配
+			"style": {
+				"navigationBarTitleText": "技能匹配"
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/fitPersonJob/index", // 人岗匹配 -- 人员状态
+			"style": {
+				"navigationBarTitleText": "人员状态",
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				},
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/wearCheck/index", // 人岗匹配 -- 人员状态
+			"style": {
+				"navigationBarTitleText": "穿戴确认",
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#ff7e40",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				},
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#ff7e40",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/userWearInfo/index", // 人岗匹配 -- 人员状态
+			"style": {
+				"navigationBarTitleText": "人员穿戴情况"
+			}
+		}, {
+			"path": "pages/microApp/Fit-PersonJob/userWearInfo/filter/index", // 人岗匹配 -- 人员状态
+			"style": {
+				"navigationBarTitleText": "人员穿戴情况查询"
+			}
+		}, {
+			"path": "pages/microApp/HoursCollection/applyHour/index", //工时采集 → 工时申报
+			"style": {
+				"navigationBarTitleText": "工时采集",
+				"app-plus": {
+					"softinputMode": "adjustPan"
+				}
+			}
+		}, {
+			"path": "pages/microApp/HoursCollection/approveHour/index", //工时采集 → 工时审批
+			"style": {
+				"navigationBarTitleText": "工时审批",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/microApp/HoursCollection/approveRecord/index", //工时采集 → 工时审批
+			"style": {
+				"navigationBarTitleText": "审批进度",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/microApp/HoursCollection/approveHour/hourDetail/index", //工时采集 → 工时审批 → 详情
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		}, {
+			"path": "pages/microApp/HoursCollection/collectionReport/index", //工时采集 → 工时采集报表
+			"style": {
+				"navigationBarTitleText": "工时采集报表",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/microApp/PersonSchedule/updateSchedule/index", //人员排班 → 变更排班
+			"style": {
+				"navigationBarTitleText": "变更排班",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/PersonSchedule/querySchedule/index", //人员排班 → 查看排班
+			"style": {
+				"navigationBarTitleText": "排班信息",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/common/selectItems/index", //通用页面 -- 选择列表
+			"style": {
+				"navigationBarTitleText": "选择列表"
+			}
+		}, {
+			"path": "pages/common/multipleSelect/index", //通用页面 -- 选择列表--多选
+			"style": {
+				"navigationBarTitleText": "选择人员列表"
+			}
+		},
+		{
+			"path": "pages/common/videoPlayer/index", //通用页面 -- 视屏播放
+			"style": {
+				"navigationBarTitleText": "视频播放",
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#000000",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"splitLine": {
+							"color": "#000000"
+						},
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				},
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#000000",
+						"titleColor": "#ffffff",
+						"titleSize": "32rpx",
+						"splitLine": {
+							"color": "#000000"
+						},
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		},
+		/*--------------------------------------DIPS---------------------------------------------*/
+		{
+			"path": "pages/microApp/Dips/checkMaintain/index", // dips → 设备的点检、巡检、维护、保养
+			"style": {
+				"navigationBarTitleText": "设备点检",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+								"text": "\ue905",
+								"fontSrc": "/static/iconfont.ttf",
+								"color": "#2979ff",
+								"fontSize": "28"
+							},
+							{
+								"text": "\ue610",
+								"fontSrc": "/static/iconfont.ttf",
+								"color": "#2979ff",
+								"fontSize": "28"
+							}
+						]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue905",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}, {
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Dips/checkMaintain/detail/index", // dips → 设备的点检、巡检、维护、保养 → 登记页面
+			"style": {
+				"navigationBarTitleText": "点检"
+			}
+		}, {
+			"path": "pages/microApp/Dips/checkMaintain/history/index", // dips → 设备的点检、巡检、维护、保养 → 历史登记页面
+			"style": {
+				"navigationBarTitleText": "点检历史"
+			}
+		}, {
+			"path": "pages/microApp/Dips/deviceRepair/index", // dips → 设备维修
+			"style": {
+				"navigationBarTitleText": "设备维修"
+			}
+		}, {
+			"path": "pages/microApp/Dips/deviceRepair/repairDetail/index", // dips → 设备维修 → 故障详情
+			"style": {
+				"navigationBarTitleText": "故障详情"
+			}
+		}, {
+			"path": "pages/microApp/Dips/deviceRepair/repairDevice/index", // dips → 设备维修 → 故障详情 → 开始维修
+			"style": {
+				"navigationBarTitleText": "设备维修"
+			}
+		}, {
+			"path": "pages/microApp/Dips/deviceRepair/repairRecords/index", // dips → 设备维修 → 维修记录
+			"style": {
+				"navigationBarTitleText": "历史维修记录"
+			}
+		}, {
+			"path": "pages/microApp/Dips/deviceRepairConfirm/index", // dips → 设备报修确认
+			"style": {
+				"navigationBarTitleText": "维修确认"
+			}
+		}, {
+			"path": "pages/microApp/Dips/fastRepair/index", // dips → 快速报修
+			"style": {
+				"navigationBarTitleText": "快速报修"
+			}
+		}, {
+			"path": "pages/microApp/Dips/fastRepair/queryDevice/index", // dips → 快速报修查询
+			"style": {
+				"navigationBarTitleText": "设备查询"
+			}
+		}, {
+			"path": "pages/microApp/Dips/spareParts/index", // dips → 备品备件
+			"style": {
+				"navigationBarTitleText": "备品备件管理",
+				"enablePullDownRefresh": true,
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+								"text": "\ue905",
+								"fontSrc": "/static/iconfont.ttf",
+								"color": "#2979ff",
+								"fontSize": "28"
+							},
+							{
+								"text": "\ue610",
+								"fontSrc": "/static/iconfont.ttf",
+								"color": "#2979ff",
+								"fontSize": "28"
+							}
+						]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue905",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}, {
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Dips/spareParts/materialManage/materialDetail/index", // dips → 备品备件 → 物料详情
+			"style": {
+				"navigationBarTitleText": "物料详情"
+			}
+		}, {
+			"path": "pages/microApp/Dips/spareParts/materialManage/materialInOutRecord/index", // dips → 备品备件 → 物料出入库
+			"style": {
+				"navigationBarTitleText": "出入库记录"
+			}
+		}, {
+			"path": "pages/microApp/Dips/spareParts/materialApply/index", // dips → 物料申请
+			"style": {
+				"navigationBarTitleText": "物料申领"
+			}
+		}, {
+			"path": "pages/microApp/Dips/spareParts/materialReceive/index", // dips → 物料入库接收
+			"style": {
+				"navigationBarTitleText": "物料入库"
+			}
+		}, {
+			"path": "pages/microApp/Dips/spareParts/materialApprove/index", // dips → 物料审批
+			"style": {
+				"navigationBarTitleText": "物料审批",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/microApp/Dips/spareParts/materialDown/index",
+			"style": {
+				"navigationBarTitleText": "下机",
+				"enablePullDownRefresh": true,
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Dips/spareParts/materialUp/index",
+			"style": {
+				"navigationBarTitleText": "上机",
+				"enablePullDownRefresh": true,
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Dips/spareParts/helpDoc/index", //备品备件帮助文档
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/microApp/Dips/spareParts/materialProvide/index",
+			"style": {
+				"navigationBarTitleText": "物料发放",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/microApp/Dips/spareParts/materialProvide/fifoAndLifo/index",
+			"style": {
+				"navigationBarTitleText": "批次确认",
+				"enablePullDownRefresh": false,
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Dips/spareParts/locationManage/index", // dips → 库位管理
+			"style": {
+				"navigationBarTitleText": "库位管理"
+				// "h5": {
+				// 	"titleNView": {
+				// 		"backgroundColor": "#FFFFFF",
+				// 		"titleColor": "#323233",
+				// 		"titleSize": "32rpx",
+				// 		"backButton": {
+				// 			"color": "#ffffff",
+				// 			"fontSize": "32px"
+				// 		},
+				// 		"buttons": [{
+				// 			"text": "\ue627",
+				// 			"fontSrc": "/static/iconfont.ttf",
+				// 			"color": "#2979ff",
+				// 			"fontSize": "52rpx",
+				// 			"width": "66"
+				// 		}]
+				// 	}
+				// },
+				// "app-plus": {
+				// 	"titleNView": {
+				// 		"backgroundColor": "#FFFFFF",
+				// 		"titleColor": "#323233",
+				// 		"titleSize": "32rpx",
+				// 		"buttons": [{
+				// 			"text": "\ue627",
+				// 			"fontSrc": "/static/iconfont.ttf",
+				// 			"color": "#2979ff",
+				// 			"fontSize": "28"
+				// 		}],
+				// 		"backButton": {
+				// 			"color": "#2979FF",
+				// 			"fontSize": "28"
+				// 		}
+				// 	}
+				// }
+			}
+		}, {
+			"path": "pages/microApp/Dips/spareParts/locationManage/addLocation/index",
+			"style": {
+				"navigationBarTitleText": "库位新增"
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/index", // dips → 工治具管理
+			"style": {
+				"navigationBarTitleText": "工治具管理",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						// "splitLine": {
+						// 	"color": "#c8c7cc"
+						// },
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+								"text": "\ue905",
+								"fontSrc": "/static/iconfont.ttf",
+								"color": "#2979ff",
+								"fontSize": "28"
+							},
+							{
+								"text": "\ue610",
+								"fontSrc": "/static/iconfont.ttf",
+								"color": "#2979ff",
+								"fontSize": "28"
+							}
+						]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						// "splitLine": {
+						// 	"color": "#c8c7cc"
+						// },
+						"buttons": [{
+							"text": "\ue905",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}, {
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureManage/fixtureDetail/index", // dips → 工治具管理 → 治具详情
+			"style": {
+				"navigationBarTitleText": "工治具详情"
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureManage/fixtureInOutRecord/index", // dips → 工治具管理 → 出入库记录
+			"style": {
+				"navigationBarTitleText": "出入库记录"
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureCheck/index", // dips → 工治具管理 → 工治具盘点
+			"style": {
+				"navigationBarTitleText": "工治具盘点",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						// "splitLine": {
+						// 	"color": "#c8c7cc"
+						// },
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						// "splitLine": {
+						// 	"color": "#c8c7cc"
+						// },
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureApply/index", // dips → 工治具管理 → 领用申请
+			"style": {
+				"navigationBarTitleText": "工治具领用"
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureApprove/index", // dips → 工治具管理 → 发放确认
+			"style": {
+				"navigationBarTitleText": "工治具发放"
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureReceive/index", // dips → 工治具管理 → 归还确认
+			"style": {
+				"navigationBarTitleText": "工治具归还",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue6c7",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue6c7",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureReceive/receiveRecord/index", // dips → 工治具管理 → 归还确认 → 归还记录
+			"style": {
+				"navigationBarTitleText": "归还记录"
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureReceive/fixtureIn/index", // dips → 工治具管理 → 归还确认 → 入库
+			"style": {
+				"navigationBarTitleText": "入库"
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureResume/index", // dips → 工治具管理 → 工治具履历
+			"style": {
+				"navigationBarTitleText": "工治具履历",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureResume/resumeOpeCheckIn/index", // dips → 工治具管理 → 工治具履历 → 生产操作员登记
+			"style": {
+				"navigationBarTitleText": "生产操作员登记"
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureResume/resumeTeCheckIn/index", // dips → 工治具管理 → 工治具履历 → 设备技术员登记
+			"style": {
+				"navigationBarTitleText": "设备技术员登记"
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureMaintainApply/index", // dips → 工治具管理 → 工治具保养
+			"style": {
+				"navigationBarTitleText": "工治具保养"
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureMaintainApprove/index", // dips → 工治具管理 → 工治具保养待确认
+			"style": {
+				"navigationBarTitleText": "工治具保养待确认"
+			}
+		}, {
+			"path": "pages/microApp/Dips/toolingFixture/fixtureMaintainApprove/approveConfirm/index", // dips → 工治具管理 → 工治具保养确认 → 保养确认
+			"style": {
+				"navigationBarTitleText": "保养确认"
+			}
+		},
+		/*--------------------------------------MES---------------------------------------------*/
+		{
+			"path": "pages/microApp/Mes/packPhotos/index", // Mes → pack打包拍照
+			"style": {
+				"navigationBarTitleText": "打包拍照"
+			}
+		},
+		{
+			"path": "pages/microApp/Mes/lockUnlock/index", // Mes → 解锁锁定
+			"style": {
+				"navigationBarTitleText": "锁定&解锁&报废",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue64c",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "24"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue64c",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "24"
+						}
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/microApp/Mes/lockUnlock/queryPage/index", // Mes → 锁定解锁 → 查询
+			"style": {
+				"navigationBarTitleText": "查询产品状态"
+			}
+		},
+		{
+			"path": "pages/microApp/Mes/productTracing/index", // Mes → 产品追溯
+			"style": {
+				"navigationBarTitleText": "产品追溯"
+			}
+		},
+		{
+			"path": "pages/microApp/Mes/materialInfo/index", // Mes → 物料信息
+			"style": {
+				"navigationBarTitleText": "工序物料信息"
+			}
+		},
+		{
+			"path": "pages/microApp/Mes/newTestData/index", // Mes → 新测试数据
+			"style": {
+				"navigationBarTitleText": "新测试数据"
+			}
+		},
+		{
+			"path": "pages/microApp/Mes/materialInfo/materialInfoSearch/index", // Mes → 新测试数据--搜索
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		},
+		{
+			"path": "pages/microApp/Mes/fixtureOnline/index", // Mes → 辅料治具上线
+			"style": {
+				"navigationBarTitleText": "辅料治具上线"
+			}
+		},
+		/*--------------------------------------QMS---------------------------------------------*/
+		/*--------------------------------------QMS(IPQC)---------------------------------------------*/
+		{
+			"path": "pages/microApp/Qms/firstInspection/index", // QMS → 首件检验列表
+			"style": {
+				"navigationBarTitleText": "首巡检单列表",
+				// "enablePullDownRefresh": true,
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue905",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "24"
+						},
+						"buttons": [{
+							"text": "\ue905",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}]
+					}
+				}
+			}
+		},
+
+		{
+			"path": "pages/microApp/Qms/firstInspection/lineAndReiptsTypeSearch/index", // QMS → 首件检验
+			"style": {
+				"navigationBarTitleText": "线体&单据类型查询"
+			}
+		},
+
+		{
+			"path": "pages/microApp/Qms/firstInspection/inspectOperate/index", // QMS → 首件检验
+			"style": {
+				"navigationBarTitleText": "首巡检"
+			}
+		},
+		{
+			"path": "pages/microApp/Qms/newCreateInspection/index", // QMS → 中断管理（创建IPQC检验单）
+			"style": {
+				"navigationBarTitleText": "中断管理"
+			}
+		},
+		{
+			"path": "pages/microApp/Qms/queryInspection/index", // QMS → 单据查询
+			"style": {
+				"navigationBarTitleText": "单据查询",
+				"enablePullDownRefresh": true,
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue64c",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "24"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue64c",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "24"
+						}
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/microApp/Qms/queryInspection/queryPage/index", // QMS → 单据查询（查询页）
+			"style": {
+				"navigationBarTitleText": "查询"
+			}
+		}, {
+			"path": "pages/microApp/Qms/queryInspection/inspectionDetail/index", // QMS → 检验单据的详情页面
+			"style": {
+				"navigationBarTitleText": "检验明细"
+			}
+		},
+		{
+			"path": "pages/microApp/Qms/exceptionSheetEVC/index", // QMS → 品质异常单(EVC)
+			"style": {
+				"navigationBarTitleText": "品质异常单(EVC)"
+			}
+		},
+		{
+			"path": "pages/microApp/Qms/exceptionItem/index", // QMS → QC巡检不符合项
+			"style": {
+				"navigationBarTitleText": "QC巡检不符合项"
+			}
+		}, {
+			"path": "pages/microApp/Qms/exceptionConfirm/index", // QMS → QC巡检不符合项改善效果确认
+			"style": {
+				"navigationBarTitleText": "不符合项改善列表",
+				"enablePullDownRefresh": true,
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/microApp/Qms/exceptionConfirm/confirmPage/index", // QMS → QC巡检不符合项改善效果确认
+			"style": {
+				"navigationBarTitleText": "改善效果确认",
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				},
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#2979ff",
+						"titleColor": "#ffffff",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Qms/exceptionSheetEVB/index", // QMS → 品质异常单(EVB)
+			"style": {
+				"navigationBarTitleText": "品质异常单(EVB)"
+			}
+		},
+		{
+			"path": "pages/microApp/Qms/exceptionItemEvb/index", // QMS → QC巡检不符合项(EVB)
+			"style": {
+				"navigationBarTitleText": "巡检不符合项"
+			}
+		},
+		{
+			"path": "pages/microApp/Qms/problemAccount/index", // QMS → QC巡检不符合项(EVB)
+			"style": {
+				"navigationBarTitleText": "问题台账", // QMS → 问题台账
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue64c",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+							// "text": "分享",
+							// "fontSize": "28"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "24"
+						},
+						"buttons": [{
+							"text": "\ue905",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/microApp/Qms/problemAccount/searchConfirmPage/index", // QMS → QC巡检不符合项(EVB)
+			"style": {
+				"navigationBarTitleText": "查询" // QMS → 问题台账--查询
+			}
+		},
+		/*--------------------------------------TDMS---------------------------------------------*/
+		{
+			"path": "pages/microApp/Tdms/operatePC/index", //上下机
+			"style": {
+				"navigationBarTitleText": "上机&下机"
+			}
+		}, {
+			"path": "pages/microApp/Tdms/saveData/index",
+			"style": {
+				"navigationBarTitleText": "数据录入",
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/microApp/Tdms/resistanceThickness/index", //接触电阻 or 厚度测试
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": true,
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue627",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}, {
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue627",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}, {
+							"text": "\ue610",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "28"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/microApp/Tdms/resistanceThickness/addNewItem/index", //接触电阻 or 厚度测试   → 新增
+			"style": {
+				"navigationBarTitleText": "新增"
+			}
+		},
+		{
+			"path": "pages/microApp/Tdms/resistanceThickness/itemList/index", //接触电阻 or 厚度测试   → 查看列表
+			"style": {
+				"navigationBarTitleText": "明细列表"
+			}
+		},
+		/*--------------------------------------升级---------------------------------------------*/
+		{
+			"path": "pages/common/versionInfo/index",
+			"style": {
+				"navigationStyle": "custom", // 取消本页面的导航栏
+				"app-plus": {
+					"titleNView": false,
+					"animationType": "fade-in", // 设置fade-in淡入动画，为最合理的动画类型
+					"background": "transparent", // 背景透明
+					"backgroundColor": "rgba(0,0,0,0)", // 背景透明
+					"popGesture": "none" // 关闭IOS屏幕左边滑动关闭当前页面的功能
+				}
+			}
+		},
+		/*--------------------------------------PMES---------------------------------------------*/
+		{
+			"path": "pages/microApp/Pmes/stirProcedure/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/microApp/Pmes/stirProcedure/stirStepDetail/index",
+			"style": {
+				"navigationBarTitleText": "参数录入",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Pmes/mixinProcedure/index", //单/双面涂布、辊压、模切、分条、裁片
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Pmes/capacityProcedure/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Pmes/lineWareHouse/index",
+			"style": {
+				"navigationBarTitleText": "线边仓",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Tdms/temperatureInput/index",
+			"style": {
+				"navigationBarTitleText": "温湿度录入",
+				"enablePullDownRefresh": true,
+				"h5": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"backButton": {
+							"color": "#ffffff",
+							"fontSize": "28"
+						},
+						"buttons": [{
+							"text": "\ue627",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "24"
+						}]
+					}
+				},
+				"app-plus": {
+					"titleNView": {
+						"backgroundColor": "#FFFFFF",
+						"titleColor": "#323233",
+						"titleSize": "32rpx",
+						"buttons": [{
+							"text": "\ue627",
+							"fontSrc": "/static/iconfont.ttf",
+							"color": "#2979ff",
+							"fontSize": "24"
+						}],
+						"backButton": {
+							"color": "#2979FF",
+							"fontSize": "28"
+						}
+					}
+				}
+			}
+		}, {
+			"path": "pages/microApp/Tdms/temperatureInput/editTemperature/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Tdms/deviceSpotCheck/index",
+			"style": {
+				"navigationBarTitleText": "设备点检",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/microApp/Tdms/deviceSpotCheck/spotCheck/index",
+			"style": {
+				"navigationBarTitleText": "设备点检",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Tdms/cellUpDown/index",
+			"style": {
+				"navigationBarTitleText": "电芯上架",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Tdms/cellUpDown/upDownDetail/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Sws/performanceManagement/index",
+			"style": {
+				"navigationBarTitleText": "绩效评分",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Sws/performanceManagement/performanceScore/index",
+			"style": {
+				"navigationBarTitleText": "评分",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Sws/performanceManagement/performanceItems/index",
+			"style": {
+				"navigationBarTitleText": "评分标准",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Sws/performanceCheck/index",
+			"style": {
+				"navigationBarTitleText": "绩效审核",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Sws/performanceRecord/index",
+			"style": {
+				"navigationBarTitleText": "绩效记录",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Sws/performanceRecord/userRecord/index",
+			"style": {
+				"navigationBarTitleText": "个人绩效记录",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/microApp/Wms/platformManagement/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/microApp/Wms/platformManagement/pmDetail/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		/*--------------------------------------QMS STAERT---------------------------------------------*/
+		{
+			"path": "pages/microApp/QmsManagement/4MChange/index",
+			"style": {
+				"navigationBarTitleText": "4M变化点管理",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/microApp/QmsManagement/4MChange/infomationPosing/index",
+			"style": {
+				"navigationBarTitleText": "4M变化点--提报信息",
+				"enablePullDownRefresh": false
+			}
+		},
+		// /pages/microApp/QmsManagement/4MChange/components/selectProject/index
+		{
+			"path": "pages/microApp/QmsManagement/4MChange/components/selectProject/index",
+			"style": {
+				"navigationBarTitleText": "项目选择",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/microApp/QmsManagement/4MChange/components/selectLineName/index",
+			"style": {
+				"navigationBarTitleText": "线别选择",
+				"enablePullDownRefresh": false
+			}
+		}
+
+	],
+	"tabBar": {
+		"color": "#909399",
+		"selectedColor": "#2979FF",
+		"borderStyle": "#ebebeb",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/home/index",
+			"iconPath": "static/swd/home.png",
+			"selectedIconPath": "static/swd/home-selected.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/microApp/index",
+			"iconPath": "static/swd/category.png",
+			"selectedIconPath": "static/swd/category-selected.png",
+			"text": "分类"
+		}, {
+			"pagePath": "pages/visualzed/index",
+			"iconPath": "static/swd/visualzed.png",
+			"selectedIconPath": "static/swd/visualzed-selected.png",
+			"text": "可视化"
+		}, {
+			"pagePath": "pages/mine/index",
+			"iconPath": "static/swd/mine.png",
+			"selectedIconPath": "static/swd/mine-selected.png",
+			"text": "我的"
+		}]
+	}
+}

@@ -1,0 +1,76 @@
+.sws-flex-d-column {
+	flex-direction: column !important;
+}
+
+.sws-wh100 {
+	width: 100%;
+	height: 100%;
+}
+
+.sws-w100 {
+	width: 100%;
+}
+
+.sws-h100 {
+	height: 100%;
+}
+
+.sws-bg-ebebeb {
+	background-color: #ebebeb;
+}
+
+.sws-bg-ffffff{
+	background-color: #ffffff;
+}
+
+.sws-font-bold {
+	font-weight: bold;
+}
+
+.sws-overflow-hidden {
+	overflow: hidden;
+}
+
+.sws-overflow-scroll-y {
+	overflow-y: scroll;
+}
+
+.sws-overflow-scroll-x {
+	overflow-x: scroll;
+}
+
+/* 元素置灰 */
+.sws-el-disabled {
+	filter: opacity(0.3);
+}
+
+.sws-font-fff {
+	color: #ffffff;
+}
+
+.sws-color-opacity8 {
+	opacity: .8;
+}
+
+.w-h-30 {
+	width: 67.5rpx;
+	height: 67.5rpx;
+}
+
+.w-h-80 {
+	width: 80rpx;
+	height: 80rpx;
+}
+
+.sws-line-h-repair {
+	line-height: normal!important;
+}
+
+.sws-letter-spacing {
+	letter-spacing: 20rpx;
+	text-indent: 20rpx;
+}
+
+.sws-text-h-repair {
+	vertical-align: bottom!important;
+}
